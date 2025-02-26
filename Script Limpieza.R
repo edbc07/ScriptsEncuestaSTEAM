@@ -8,7 +8,7 @@ DatosLimpios <- dataset %>%
 DatosLimpios <- DatosLimpios %>% 
   mutate_all(~ifelse(is.na(.) | . == "", "Sin especificar", .))
 
-
+# Paso 3: Agrupar respuestas adicionales por "Otro"
 DatosLimpios$`Edad` <- ifelse(DatosLimpios$`Edad` %in% c("15","16", "17", "18","Sin especificar"), 
                                            DatosLimpios$`Edad`, 
                                            "Otro")
